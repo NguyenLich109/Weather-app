@@ -1,0 +1,259 @@
+
+body{
+    margin: 0;
+    /* background: url('https://baomoi-photo-fbcrawler.zadn.vn/w900_r16x9/2020_10_22_105_36780778/d618535ea71d4e43170c.jpg'); */
+    background-image: url("https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif");
+    /* background-image: url("./anh.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin:50px auto;
+}
+
+.wrapper-bg{
+    min-width: 400px;
+}
+
+.apps{
+    background-color: rgba(0,0,0,0.05);
+    /* border: 4px solid rgba(255, 0, 0, 0.432); */
+    border-radius: 10px;
+}
+.justify-content-center{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.apps h1{
+    margin: 5px 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+/*Tìm kiếm thời tiết tại một khu vực*/
+.flex{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 20px;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    color: white;
+}
+.flex-search{
+    margin: 5px 0;
+}
+.flex-text{
+    padding: 5px 0 12px 0;
+    display: flex;
+    align-items: center;
+}
+.flex-text label{
+    min-width: 40px;
+    padding-right:15px;
+}
+.flex-select{
+    border: 3px solid #ddd;
+    outline: none;
+    height: 30px;
+    width: 200px;
+    padding-left: 10px;
+    border-radius: 4px;
+}
+/*chỉnh button*/
+.flex-button{
+    height: 30px;
+    width: 80px;
+    border-radius: 4px;
+    background-color: rgba(137, 43, 226, 0.822);
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+.flex-button:hover{
+    background-color: rgb(133, 7, 252);
+}
+/*thời tiết hiện tại*/
+.card-header{
+    margin: 10px 0;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding: 8px 0;
+}
+.card-hearder__text{
+    font-size: 16px;
+    margin: 5px 0;
+}
+.mb-1{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px;
+}
+.could-day{
+    font-size: 25px;
+}
+.card-header__img{
+    width: 80px;
+}
+.display-1{
+    font-size: 40px;
+}
+.feels{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+}
+.card-hearder__span{
+    font-size: 18px;
+}
+/*thơi tiết hàng giờ*/
+.card-body{
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 16px;
+    height: 140px;
+    overflow: hidden;
+}
+.card-body.open{
+    height: 100%;
+    overflow: none;
+}
+.card-body_text{
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.486);
+    color: white;
+}
+.text-center{
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.486);
+}
+.text-center:last-child
+{
+    border-bottom: none;
+}
+.col-2{
+    width: 60px;
+    text-align: center;
+}
+/*sử lý logic hiển thị tất cả thời tiết hàng giờ*/
+.turnon{
+    text-align: center;
+}
+.turnon-button{
+    font-size: 14px;
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(248, 33, 184);
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+.turnon-button:hover{
+    background-color: rgb(248, 14, 123);
+}
+
+/*Xem thời tiết 3 ngày*/
+.weather-three{
+    margin-right: 15px;
+    margin-left: 5px;
+}
+.card-footer__week{
+    padding: 0 5px;
+}
+.card-footer{
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+.card-footer__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+/*Thời tiết 7 Ngày*/
+.weather-daily__seven{
+    margin-left: 15px;
+    margin-right: 5px;
+}
+.weather-seven{
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+}
+.weather-seven__text{
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.486);
+    color: white;
+}
+.weather-seven__list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.weather-seven-temp-text{
+    padding: 0 5px;
+}
+/*dồng hồ*/
+.date-container{
+    border-radius: 12px;
+    text-align: center;
+    /* margin-bottom: 12px; */
+}
+.time{
+    font-size: 55px;
+    color: rgb(235, 179, 26);
+    font-weight: 600;
+}
+.date{
+    font-size: 25px;
+    color: rgb(235, 184, 17);
+    font-weight: 600;
+}
+.date-container #am-pm{
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+/* Địa chỉ khu vực */
+.current-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.place-container{
+    text-align: end;
+    color: rgb(252, 250, 248);
+}
+
+.place-container .time-zone{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.place-container .country{
+    font-size: 20px;
+    font-weight: 700;
+}

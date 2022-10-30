@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Weather</title>
+</head>
+<body onload="DefaultScreen()">  
+<!-- Section: App -->
+<div class="apps">
+  <h1>ỨNG DỤNG XEM THỜI TIẾT</h1>
+  <div class="current-info">
+    <div class="date-container">
+        <div class="time" id="time"><span id="am-pm"></span></div>
+        <div class="date" id="date"></div>
+    </div>
+    <div class="place-container">
+        <div class="time-zone" id="time-zone"></div><br>
+        <div class="country" id="country"></div>
+    </div>
+  </div>
+  <div class="justify-content-center">
+
+      <div class="weather-three">
+         <!-- đồng hồ -->
+            <!-- <div class="date-container">
+                <div class="time" id="time">
+                    <span id="am-pm"></span>
+                </div>
+                <div class="date" id="date">
+                </div>
+            </div> -->
+            
+        <!-- thời tiết 3 ngày -->
+        <!-- <div class="card-footer">
+          <h2 class="card-body_text">Thời tiết 3 ngày:</h2>
+          <div class="card-footer__flex ">
+            <div class="card-footer__week">
+              <strong id="days1">Today</strong>
+            </div>
+            <div class="card-footer__week">
+              <img id="wrapper-icon-img0" src="" class="w-100" alt="" />
+            </div>
+            <div class="card-footer__week">
+              <span id="wrapper-forecast-temp-min0"></span>
+              <span id="wrapper-forecast-temp-s0">/</span>
+              <span id="wrapper-forecast-temp-max0"></span>
+            </div>
+              <span class="card-footer__week" id="wrapper-forecast-temp-speed0"></span>
+              <span class="card-footer__week" id="wrapper-forecast-temp-humidity0"></span>
+          </div>
+          <div class="card-footer__flex">
+            <div class="card-footer__week">
+              <strong id="days2">Tomorrow</strong>
+            </div>
+  
+            <div class="card-footer__week">
+              <img id="wrapper-icon-img1" src="" class="w-100" alt=""/>
+            </div>
+  
+            <div class="card-footer__week">
+              <span id="wrapper-forecast-temp-min1"></span>
+              <span id="wrapper-forecast-temp-s1">/</span>
+              <span id="wrapper-forecast-temp-max1"></span>
+            </div>
+              <span class="card-footer__week" id="wrapper-forecast-temp-speed1"></span>
+              <span class="card-footer__week" id="wrapper-forecast-temp-humidity1"></span>
+          </div>
+          <div class="card-footer__flex">
+            <div class="card-footer__week">
+              <strong id="days3">Day after tomorrow</strong>
+            </div>
+  
+            <div class="card-footer__week">
+              <img id="wrapper-icon-img2" src="" class="w-100" alt="" />
+            </div>
+  
+            <div class="card-footer__week">
+              <span id="wrapper-forecast-temp-min2"></span>
+              <span id="wrapper-forecast-temp-s2">/</span>
+              <span id="wrapper-forecast-temp-max2"></span>
+            </div>
+              <span class="card-footer__week" id="wrapper-forecast-temp-speed2"></span>
+              <span class="card-footer__week" id="wrapper-forecast-temp-humidity2"></span>
+          </div>
+        </div> -->
+      
+        <div class="card-body" id="js-hourly">
+          <h2 class="card-body_text">Thời tiết hàng giờ</h2>
+          <div class="text-center">
+            <div class="col-2">
+              <strong class="d-block">Now</strong>
+              <img id="wrapper-icon-hour0" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour0"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time1"></strong>
+              <img id="wrapper-icon-hour1" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour1"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time2"></strong>
+              <img id="wrapper-icon-hour2" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour2"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time3"></strong>
+              <img id="wrapper-icon-hour3" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour3"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time4"></strong>
+              <img id="wrapper-icon-hour4" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour4"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time5"></strong>
+              <img id="wrapper-icon-hour5" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour5"></strong>
+            </div>
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time6">Now</strong>
+              <img id="wrapper-icon-hour6" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour6"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time7"></strong>
+              <img id="wrapper-icon-hour7" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour7"></strong>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time8"></strong>
+              <img id="wrapper-icon-hour8" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour8"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time9"></strong>
+              <img id="wrapper-icon-hour9" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour9"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time10"></strong>
+              <img id="wrapper-icon-hour10" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour10"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time11"></strong>
+              <img id="wrapper-icon-hour11" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour11"></strong>
+            </div>
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time12"></strong>
+              <img id="wrapper-icon-hour12" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour12"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time13"></strong>
+              <img id="wrapper-icon-hour13" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour13"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time14"></strong>
+              <img id="wrapper-icon-hour14" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour14"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time15"></strong>
+              <img id="wrapper-icon-hour15" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour15"></strong>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time16"></strong>
+              <img id="wrapper-icon-hour16" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour16"></strong>
+            </div>
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time17"></strong>
+              <img id="wrapper-icon-hour17" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour17"></strong>
+            </div>
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time18"></strong>
+              <img id="wrapper-icon-hour18" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour18"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time19"></strong>
+              <img id="wrapper-icon-hour19" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour19"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time20"></strong>
+              <img id="wrapper-icon-hour20" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour20"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time21"></strong>
+              <img id="wrapper-icon-hour21" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour21"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time22"></strong>
+              <img id="wrapper-icon-hour22" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour22"></strong>
+            </div>
+
+            <div class="col-2">
+              <strong class="d-block" id="wrapper-time23"></strong>
+              <img id="wrapper-icon-hour23" src="" class="" alt="" />
+              <strong class="d-block" id="wrapper-hour23"></strong>
+            </div>
+          </div>
+        </div>
+        <div class="turnon">
+          <button class="turnon-button" id="js-turnon" onclick="myTurnOn()">Xem Thêm</button>
+        </div>
+      </div>
+      <div class="wrapper-bg">
+        <!-- thanh tìm kiếm -->
+        <div class="flex">
+          <h2 class="flex-search">Tìm kiếm khu vực</h2>
+          <div class="flex-text">
+            <label for="">Khu vực:</label>
+            <select class="flex-select" name="" id="lat-select">
+              <!-- gán tọa địa chỉ khu vực vào value cua option -->
+              <!-- lat là vĩ độ và lon là kinh độ -->
+              <option value="lat=&lon="></option>
+              <option value="lat=10.7758&lon=106.702">TP.Hồ Chí Minh</option>
+              <option value="lat=11.539&lon=106.905">Bình Phước</option>
+              <option value="lat=10.9808&lon=106.654">Bình Dương</option>
+              <option value="lat=10.9447&lon=106.824">Đồng Nai</option>
+              <option value="lat=11.3138&lon=106.096">Tây Ninh</option>
+              <option value="lat=10.4963&lon=107.169">Bà Rịa-Vũng Tàu</option>
+              <option value="lat=10.6073&lon=106.672">Long An</option>
+              <option value="lat=10.2944&lon=105.759">Đồng Tháp</option>
+              <option value="lat=10.3814&lon=106.235">Tiền Giang</option>
+              <option value="lat=10.7102&lon=105.119">An giang</option>
+              <option value="lat=10.2448&lon=106.373">Bến Tre</option>
+              <option value="lat=10.2537&lon=105.972">Vĩnh Long</option>
+              <option value="lat=9.94719&lon=106.342">Trà Vinh</option>
+              <option value="lat=9.78299&lon=105.487">Hậu Giang</option>
+              <option value="lat=10.0107&lon=105.083">Kiên Giang</option>
+              <option value="lat=9.56644&lon=105.876">Sóc Trăng</option>
+              <option value="lat=9.28249&lon=105.726">Bạc Liêu</option>
+              <option value="lat=16.068&lon=108.212">Đà Nẵng</option>
+              <option value="lat=15.8752&lon=108.205">Quảng Nam</option>
+              <option value="lat=15.119&lon=108.81">Quảng Ngãi</option>
+              <option value="lat=13.7704&lon=109.233">Bình Định</option>
+              <option value="lat=13.0877&lon=109.299">Phú Yên</option>
+              <option value="lat=12.2432&lon=109.19">Khánh Hòa</option>
+              <option value="lat=11.577&lon=108.987">Ninh Thuận</option>
+              <option value="lat=10.931&lon=108.101">Bình Thuận</option>
+            </select>
+          </div>
+          <button onclick="GetInfo()" class="flex-button">Tìm kiếm</button>
+        </div>
+        <!--thời tiết Hôm nay-->
+        <div class="card-header">
+          <div class="text-center__div mb-3">
+            <p class="mb-1" id="wrapper-name"></p>
+            <img class="card-header__img" id="wrapper-icon" src="" alt=""></img>
+            <p class="mb-1 could-day" id="wrapper-description"></p>
+            <p class="card-hearder__text">Nhiệt Độ:</p>
+            <p class="display-1 mb-1" id="wrapper-temp"></p>
+            <div class="feels">
+              <span class="card-hearder__span" id="temp-day"></span>
+              <span class="card-hearder__span" id="temp-night"></span>
+            </div>
+            <span class="">Tốc độ gió: <span id="wrapper-wind"></span></span>
+            <span class="mx-2">|</span>
+            <span class=""
+                  >Độ ẩm: <span id="wrapper-humidity"></span
+              ></span>
+          </div>
+        </div>
+
+        <!-- Thời tiết hàng giờ -->
+      </div>
+      <!-- thời tiết 7 ngày -->
+      <div class="weather-daily__seven">
+        <div class="weather-seven">
+          <h2 class="weather-seven__text">Thời tiết 7 ngày</h2>
+          <div class="weather-seven__list">
+            <div class="weather-seven__week">
+              <strong id="seven-day0">Thứ 2</strong>
+            </div>
+            <div class="weather-seven_img">
+              <img id="weather-seven__icon0" src="http://openweathermap.org/img/wn/04d.png" class="w-100" alt="" />
+            </div>
+            <div class="weather-seven__week">
+              <span id="weather-seven-temp-min0">20o</span>
+              <span id="weather-seven-temp-s0">/</span>
+              <span id="weather-seven-temp-max0">30o</span>
+            </div>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-speed0">Tốc độ:5m/s</span>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-humidity0">Độ ẩm:95%</span>
+          </div>
+          <div class="weather-seven__list">
+            <div class="weather-seven__week">
+              <strong id="seven-day1">Thứ 3</strong>
+            </div>
+            <div class="weather-seven_img">
+              <img id="weather-seven__icon1" src="" class="w-100" alt="" />
+            </div>
+            <div class="weather-seven__week">
+              <span id="weather-seven-temp-min1"></span>
+              <span id="weather-seven-temp-s1">/</span>
+              <span id="weather-seven-temp-max1"></span>
+            </div>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-speed1"></span>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-humidity1"></span>
+          </div>
+          <div class="weather-seven__list">
+            <div class="weather-seven__week">
+              <strong id="seven-day2">Thứ 4</strong>
+            </div>
+            <div class="weather-seven_img">
+              <img id="weather-seven__icon2" src="" class="w-100" alt="" />
+            </div>
+            <div class="weather-seven__week">
+              <span id="weather-seven-temp-min2"></span>
+              <span id="weather-seven-temp-s2">/</span>
+              <span id="weather-seven-temp-max2"></span>
+            </div>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-speed2"></span>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-humidity2"></span>
+          </div>
+          <div class="weather-seven__list">
+            <div class="weather-seven__week">
+              <strong id="seven-day3">Thứ 5</strong>
+            </div>
+            <div class="weather-seven_img">
+              <img id="weather-seven__icon3" src="" class="w-100" alt="" />
+            </div>
+            <div class="weather-seven__week">
+              <span id="weather-seven-temp-min3"></span>
+              <span id="weather-seven-temp-s3">/</span>
+              <span id="weather-seven-temp-max3"></span>
+            </div>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-speed3"></span>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-humidity3"></span>
+          </div>
+          <div class="weather-seven__list">
+            <div class="weather-seven__week">
+              <strong id="seven-day4">Thứ 6</strong>
+            </div>
+            <div class="weather-seven_img">
+              <img id="weather-seven__icon4" src="" class="w-100" alt="" />
+            </div>
+            <div class="weather-seven__week">
+              <span id="weather-seven-temp-min4"></span>
+              <span id="weather-seven-temp-s4">/</span>
+              <span id="weather-seven-temp-max4"></span>
+            </div>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-speed4"></span>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-humidity4"></span>
+          </div>
+          <div class="weather-seven__list">
+            <div class="weather-seven__week">
+              <strong id="seven-day5">Thứ 7</strong>
+            </div>
+            <div class="weather-seven_img">
+              <img id="weather-seven__icon5" src="" class="w-100" alt="" />
+            </div>
+            <div class="weather-seven__week">
+              <span id="weather-seven-temp-min5"></span>
+              <span id="weather-seven-temp-s5">/</span>
+              <span id="weather-seven-temp-max5"></span>
+            </div>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-speed5"></span>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-humidity5"></span>
+          </div>
+          <div class="weather-seven__list">
+            <div class="weather-seven__week">
+              <strong id="seven-day6">C.Nhật</strong>
+            </div>
+            <div class="weather-seven_img">
+              <img id="weather-seven__icon6" src="" class="w-100" alt="" />
+            </div>
+            <div class="weather-seven__week">
+              <span id="weather-seven-temp-min6"></span>
+              <span id="weather-seven-temp-s6">/</span>
+              <span id="weather-seven-temp-max6"></span>
+            </div>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-speed6"></span>
+              <span class="weather-seven-temp-text" id="weather-seven-temp-humidity6"></span>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Section: App -->
+</div>
+  <script type="text/javascript" src="./js.js"></script>
+</body>
+</html>
